@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax</title>
+</head>
+<body>
+    
+    <h1>Press Button</h1>
+    <marquee behavior="scroll" direction="up">😹😹😹</marquee>
+    <!--<button type="button" onclick="accessText()">Press Button</button>-->
+    <img src="p-7058-K1859-black.jpg" style="height: 90px; width: 90px" onclick="accessText()">
+    <script>
+        function accessText(){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if (this.readyState == 4 && this.status == 200){
+                    document.getElementById("demo").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "answer.txt", true);//'true' means the request is aynchrone
+            xhttp.send();
+        }
+        </script>
+        <p id="demo">Hello World</p>
+</body>
+</html>
